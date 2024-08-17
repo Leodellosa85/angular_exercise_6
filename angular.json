@@ -109,6 +109,42 @@
           }
         }
       }
+    },
+    "myToaster-library": {
+      "projectType": "library",
+      "root": "projects/my-toaster-library",
+      "sourceRoot": "projects/my-toaster-library/src",
+      "prefix": "nx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/my-toaster-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/my-toaster-library/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/my-toaster-library/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/my-toaster-library/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": "3b3a7991-270b-4b28-bd56-2818289fe0e1"
   }
 }

@@ -1,0 +1,98 @@
+.toaster {
+    position: fixed;
+    z-index: 200;
+    min-width: 500px;
+    max-width: 500px;
+
+    .toast-message {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 4px;
+        word-break: break-all;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.toast-primary {
+            background: lighten(#DF691A, 20%);
+            color: darken(#DF691A, 10%);
+        }
+
+        &.toast-secondary {
+            background: lighten(#3B4D63, 20%);
+            color: darken(#3B4D63, 10%);
+        }
+
+        &.toast-success {
+            background: lighten(#0cd90c, 20%);
+            color: darken(#515651, 10%);
+        }
+
+        &.toast-info {
+            background: lighten(#3bb4d8, 20%);
+            color: darken(#3bb4d8, 10%);
+        }
+
+        &.toast-warning {
+            background: lighten(#f0ad4e, 20%);
+            color: darken(#f0ad4e, 10%);
+        }
+
+        &.toast-danger {
+            background: lighten(#d9534f, 20%);
+            color: darken(#d9534f, 10%);
+        }
+    }
+
+    &.toaster-top-left {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        top: 0;
+        left: 0;
+    }
+
+    &.toaster-top-center {
+        margin-top: 1rem;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &.toaster-top-right {
+        margin-top: 1rem;
+        margin-right: 1rem;
+        top: 0;
+        right: 0;
+    }
+
+    &.toaster-bottom-left {
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+        bottom: 0;
+        left: 0;
+    }
+
+    &.toaster-bottom-center {
+        margin-bottom: 1rem;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &.toaster-bottom-right {
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 478px) {
+    .toaster {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+}

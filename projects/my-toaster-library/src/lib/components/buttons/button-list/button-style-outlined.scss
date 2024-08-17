@@ -1,0 +1,50 @@
+@mixin generate-button-bordered($color, $border) {
+    border: 2px $border $color;
+    background: #FFF;
+    color: $color;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+  
+    &:hover {
+      color: #FFF;
+      background: $color;
+    }
+  
+    &:active {
+      border-color: darken($color, 10%);
+      background: darken($color, 10%);
+      box-shadow: none;
+    }
+  
+    &:disabled {
+      border-color: lighten($color, 15%);
+      color: lighten($color, 15%);
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+  }
+  
+  @mixin generate-outlined-buttons {
+    &.button-style-outlined {
+      &.button-color-default {
+        @include generate-button-bordered(#AAAAAC, solid)
+      }
+      &.button-color-primary {
+        @include generate-button-bordered(#DF691A, solid)
+      }
+      &.button-color-secondary {
+        @include generate-button-bordered(#3B4D63, solid)
+      }
+      &.button-color-success {
+        @include generate-button-bordered(#5cb85c, solid)
+      }
+      &.button-color-info {
+        @include generate-button-bordered(#3bb4d8, solid)
+      }
+      &.button-color-warning {
+        @include generate-button-bordered(#f0ad4e, solid)
+      }
+      &.button-color-danger {
+        @include generate-button-bordered(#d9534f, solid)
+      }
+    }
+  }

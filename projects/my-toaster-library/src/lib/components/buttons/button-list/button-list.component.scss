@@ -1,0 +1,22 @@
+@import './button-style-solid.scss';
+@import './button-style-outlined.scss';
+@import './button-shape.scss';
+@import './button-size.scss';
+
+:host {
+    box-sizing: border-box;
+    font-weight: bold;
+    margin: 0 1rem 1rem 0;
+    display: inline-block;
+    color: #FFF;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s;
+  
+    @include generate-solid-buttons;
+    @include generate-outlined-buttons;
+    @include generate-sized-buttons;
+    @include generate-shaped-buttons;
+  
+  }
